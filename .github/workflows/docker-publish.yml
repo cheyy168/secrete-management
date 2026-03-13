@@ -60,3 +60,5 @@ jobs:
           # Cleanup
           docker stop test-container
           docker rm test-container
+      - name: Trigger Render deploy
+        run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
